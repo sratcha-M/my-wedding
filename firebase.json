@@ -1,0 +1,17 @@
+{
+  "apiKey": "AIzaSyDhKS2xtusgjrwSobCr4l8ZCKLloj2OtAU",
+  "authDomain": "my-wedding-36b27.firebaseapp.com",
+  "projectId": "my-wedding-36b27",
+  "storageBucket": "my-wedding-36b27.firebasestorage.app",
+  "messagingSenderId": "348427718852",
+  "appId": "1:348427718852:web:5609f6e2a61da4eb17f991",
+  "measurementId": "G-PYZB5RK6R0",
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
