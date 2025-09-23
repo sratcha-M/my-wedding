@@ -7,11 +7,13 @@
   "appId": "1:348427718852:web:5609f6e2a61da4eb17f991",
   "measurementId": "G-PYZB5RK6R0",
   "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "public": "build",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }

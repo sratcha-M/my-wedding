@@ -1,0 +1,7 @@
+script:
+    - npm install
+    - npm build
+    - echo "# Deploying App"
+    - firebase use tragopoulos-portfolio --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting -m "Pipeline $CI_PIPELINE_ID Build $CI_BUILD_ID"
+    - echo "# Deployed successfully!"
