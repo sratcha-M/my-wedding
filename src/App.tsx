@@ -2,34 +2,17 @@ import SVG from "react-inlinesvg";
 import { motion } from "motion/react";
 import Countdown from "react-countdown";
 
+import "swiper/css";
+
 import "./App.css";
 // import banner from "../public/banner-dt.jpg";
-// import bannerMob from "../public/banner-mob.png";
+import LogoText from "./assets/logo-text.png";
 import banner from "./assets/banner-dt.jpg";
 import bannerMob from "./assets/banner-mob.png";
 import Ring from "./assets/ring.svg";
-import "swiper/css";
+import Countdowns from "./component/Countdown";
 
 const App = () => {
-  const renderer = ({
-    days,
-    hours,
-    minutes,
-    seconds,
-  }: {
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-    completed: boolean;
-  }) => {
-    return (
-      <span>
-        {days}:{hours}:{minutes}:{seconds}
-      </span>
-    );
-  };
-
   return (
     <div className="relative">
       <div
@@ -76,9 +59,41 @@ const App = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ amount: 0.07 }}
-        className="pt-10"
+        className="pt-2 m-[0_auto] flex flex-col items-center text-center"
       >
-        <Countdown date={"2026-02-28T00:00:00"} renderer={renderer} />
+        <img
+          src={LogoText}
+          alt="Image LogoText"
+          className="md:w-[25vw] w-[60vw] text-center"
+        />
+        <motion.section
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ amount: 0.07 }}
+          className="md:text-[3.5vw] text-[8vw] font-[Mitr]"
+        >
+          28
+        </motion.section>
+        <motion.section
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ amount: 0.07 }}
+          className="md:text-[3.5vw] text-[8vw] font-[Mitr]"
+        >
+          กุมภาพันธ์
+        </motion.section>
+        <motion.section
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ amount: 0.07 }}
+          className="md:text-[3.5vw] text-[8vw] font-[Mitr]"
+        >
+          2569
+        </motion.section>
+        <Countdown date={"2026-02-28T00:00:00"} renderer={Countdowns} />
       </motion.section>
       <div className="p-10 h-[100vh]">
         Mint MintMint Mint Mint Mint Mint Mint Mint Mint Mint Mint Mint Mint
