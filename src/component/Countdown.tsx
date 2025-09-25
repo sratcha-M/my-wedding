@@ -11,25 +11,29 @@ const Countdowns = ({
   completed: boolean;
 }) => {
   return (
-    <div className="md:text-[9vw] text-[12vw] md:leading-18 leading-10 font-[Allura] pt-4 flex justify-center gap-2 mt-10">
+    <div className="md:text-[9vw] text-[9vw] md:leading-18 leading-10 font-[Mitr] pt-4 flex justify-center gap-2 mt-10">
       <div className="flex flex-col">
-        {days}
-        <span className="md:text-[3vw] text-[5vw]">Days</span>
+        <div>{days}</div>
+        <div className="md:mt-4 md:text-[2vw] text-[3vw] font-light">Days</div>
       </div>
       <div className="m-[0_10px_0_10px]">:</div>
       <div className="flex flex-col">
-        {hours}
-        <span className="md:text-[3vw] text-[5vw]">Hours</span>
+        <div>{hours}</div>
+        <div className="md:mt-4 md:text-[2vw] text-[3vw] font-light">Hours</div>
       </div>
       <div className="m-[0_10px_0_10px]">:</div>
       <div className="flex flex-col">
-        {minutes}
-        <span className="md:text-[3vw] text-[5vw]">Minutes</span>
+        <div>{minutes}</div>
+        <div className="md:mt-4 md:text-[2vw] text-[3vw] font-light">
+          Minutes
+        </div>
       </div>
       <div className="m-[0_10px_0_10px]">:</div>
       <div className="flex flex-col text-red-500">
-        {seconds}
-        <span className="md:text-[3vw] text-[5vw] text-black">Seconds</span>
+        <div>{seconds}</div>
+        <div className="md:mt-4 md:text-[2vw] text-[3vw] text-black font-light">
+          Seconds
+        </div>
       </div>
     </div>
   );
