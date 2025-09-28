@@ -11,7 +11,7 @@ const Countdowns = ({
   completed: boolean;
 }) => {
   return (
-    <div className="md:text-[9vw] text-[9vw] md:leading-18 leading-10 font-[Mitr] pt-4 flex justify-center gap-2 mt-10">
+    <div className="md:text-[9vw] text-[9vw] md:leading-18 leading-10 font-[Mitr] pt-4 flex justify-center gap-2 mt-4">
       <div className="flex flex-col">
         <div>{days}</div>
         <div className="md:mt-4 md:text-[2vw] text-[3vw] font-light">Days</div>

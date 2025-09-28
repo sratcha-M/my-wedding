@@ -12,8 +12,7 @@ export default {
         primary: "#ff4d6d",
       },
       fontFamily: {
-        heading: ["Playfair Display", "serif"],
-        body: ["Inter", "sans-serif"],
+        sans: ["Mitr", "ui-sans-serif", "system-ui", "sans-serif"], // 👈 ตั้ง Mitr เป็น default
       },
     },
   },
