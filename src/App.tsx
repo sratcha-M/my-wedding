@@ -19,6 +19,9 @@ import TimeLine3 from "./assets/timeline-3.png";
 import TimeLine5 from "./assets/timeline-5.svg";
 import Bow from "./assets/bow.svg";
 import Form from "./assets/form.jpg";
+import Location from "./assets/location.png";
+import Footer from "./assets/footer.jpg";
+import Thx from "./assets/thx.jpg";
 import RSVPForm from "./component/RSVPForm";
 
 const App = () => {
@@ -159,12 +162,15 @@ const App = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ amount: 0.07 }}
-            className="md:text-[24px] text-[16px] font-light"
+            className="md:text-[24px] text-[16px] font-light mt-6"
           >
             เราอยากให้ทุกท่านมาร่วมเป็นส่วนหนึ่งของการรันโปรแกรมชีวิตคู่
             และร่วมเฉลิมฉลองไปกับเรา
             หวังว่าจะได้พบรอยยิ้มและคำอวยพรจากทุกท่านในวันพิเศษนี้
           </motion.section>
+          <div className="text-center text-2xl underline mt-6 font-light">
+            ขออภัยหากไม่ได้เรียนเชิญด้วยตัวเอง
+          </div>
         </div>
       </motion.section>
       <motion.section
@@ -200,14 +206,14 @@ const App = () => {
             </div>
           </motion.section>
         </div>
-        <div className="bg-[#e8f0df] py-2 px-10 rounded-full md:mt-4 mt-10 mb-4 md:text-[3.5vw] text-[8vw] ">
+        <div className="bg-[#e8f0df] text-[#827c66] py-2 px-10 rounded-full md:mt-4 mt-10 mb-4 md:text-[3.5vw] text-[8vw] ">
           Save <span className="pb-6">The</span> Date
         </div>
-        <div className="mb-4 md:text-[24px] text-[16px] font-light">
+        <div className="my-4 md:text-[24px] text-[16px] font-light">
           หลังจากผ่านการ Debug & Compile ความรักมาอย่างยาวนาน ถึงเวลา Deploy
           โปรเจกต์ชีวิตคู่ ใน
         </div>
-        <div className="w-full py-6">
+        <div className="w-full py-6 text-[#827c66]">
           <motion.section
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -247,69 +253,82 @@ const App = () => {
         </div>
         <div className="bg-[#faf2e9] w-full pb-6 md:pt-6">
           <Countdown date={"2026-02-28T00:00:00"} renderer={Countdowns} />
+          <div className="md:text-2xl text-xs mt-4 font-light">
+            Every love story is beautiful, but ours is my favorite 💕
+          </div>
         </div>
       </motion.section>
-      <div className="flex justify-center items-center gap-10 max-md:flex-col p-10">
-        <div className="flex justify-between items-start gap-4">
-          <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
-            <img
-              src={TimeLine1}
-              alt="Time line 1"
-              className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
-            />
-            <div className="md:text-[26px] text-[20px]">07.09 น.</div>
-            <div className="md:text-[26px] text-[16px] font-light">
-              พิธีสงฆ์
-            </div>
-          </div>
-          <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
-            <img
-              src={TimeLine2}
-              alt="Time line 2"
-              className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
-            />
-            <div className="md:text-[26px] text-[20px]">08.09 น.</div>
-            <div className="md:text-[26px] text-[16px] font-light">
-              พิธีแห่ขันหมาก
-            </div>
-          </div>
+      <div className="mt-10">
+        <div className="text-[#827c66] md:text-[3.5vw] text-[8vw]">
+          WEDDING SCHEDULE
         </div>
-        <div className="flex justify-between items-start gap-4">
-          <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
-            <img
-              src={TimeLine3}
-              alt="Time line 3"
-              className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
-            />
-            <div className="md:text-[26px] text-[20px]">09.09 น.</div>
-            <div className="md:text-[26px] text-[16px] font-light">
-              พิธีรดน้ำสังข์
+        <div className="text-[#827c66] md:text-[1.5vw] text-[4vw] flex justify-center items-center gap-2">
+          <div className="border-b border-[#827c66] pb-2 w-[35%]" />
+          กำหนดพิธีการ
+          <div className="border-b border-[#827c66] pb-2 w-[35%]" />
+        </div>
+        <div className="flex justify-center items-center gap-10 max-md:flex-col p-10 mt-4">
+          <div className="flex justify-between items-start gap-4">
+            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
+              <img
+                src={TimeLine1}
+                alt="Time line 1"
+                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
+              />
+              <div className="md:text-[26px] text-[20px]">07.09 น.</div>
+              <div className="md:text-[26px] text-[16px] font-light">
+                พิธีสงฆ์
+              </div>
+            </div>
+            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
+              <img
+                src={TimeLine2}
+                alt="Time line 2"
+                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
+              />
+              <div className="md:text-[26px] text-[20px]">08.09 น.</div>
+              <div className="md:text-[26px] text-[16px] font-light">
+                พิธีแห่ขันหมาก
+              </div>
             </div>
           </div>
-          <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
-            <img
-              src={Ring}
-              alt="Time line 4"
-              className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
-            />
-            <div className="md:text-[26px] text-[20px]">10.09 น.</div>
-            <div className="md:text-[26px] text-[16px] font-light">
-              พิธีสวมแหวน
+          <div className="flex justify-between items-start gap-4">
+            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
+              <img
+                src={TimeLine3}
+                alt="Time line 3"
+                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
+              />
+              <div className="md:text-[26px] text-[20px]">09.09 น.</div>
+              <div className="md:text-[26px] text-[16px] font-light">
+                พิธีรดน้ำสังข์
+              </div>
             </div>
-          </div>
-          <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
-            <SVG
-              src={TimeLine5}
-              className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
-            />
-            <div className="md:text-[26px] text-[20px]">11.30 น.</div>
-            <div className="md:text-[26px] text-[16px] font-light">
-              ฉลองมงคลสมรส (โต๊ะจีน)
+            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
+              <img
+                src={Ring}
+                alt="Time line 4"
+                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
+              />
+              <div className="md:text-[26px] text-[20px]">10.09 น.</div>
+              <div className="md:text-[26px] text-[16px] font-light">
+                พิธีสวมแหวน
+              </div>
+            </div>
+            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
+              <SVG
+                src={TimeLine5}
+                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
+              />
+              <div className="md:text-[26px] text-[20px]">11.30 น.</div>
+              <div className="md:text-[26px] text-[16px] font-light">
+                ฉลองมงคลสมรส (โต๊ะจีน)
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="md:my-10">
+      <div className="md:my-8 border-2 border-[#e8f0df] w-max p-10 rounded-3xl mx-auto">
         <div className="md:text-[40px] text-[25px] pb-2">Dress Code</div>
         <div className="flex justify-center items-center gap-4">
           <SVG src={Bow} className="fill-[#bad29e] w-[60px] h-[60px]" />
@@ -319,12 +338,69 @@ const App = () => {
           <div className="w-12 h-12 bg-[#faf2e9] rounded-full" />
         </div>
       </div>
+      <div className="mt-10">
+        <div className="text-[#827c66] md:text-[3.5vw] text-[8vw]">
+          BEST MOMENT
+        </div>
+      </div>
       <div className="flex justify-center items-center max-md:flex-col p-10 gap-6">
         <RSVPForm />
         <img
           src={Form}
           className="md:w-[40%] md:max-w-[40%] w-full max-w-full md:h-[90vh] h-auto rounded-lg shadow-md object-cover"
         />
+      </div>
+      <div>
+        <div className="flex text-[#827c66] w-full justify-center items-center gap-2">
+          <div className="text-[14vw]">L</div>
+          <img
+            src={Location}
+            alt="Location"
+            className="w-[14vw] h-[14vw] mb-[3vw] object-cover cursor-pointer"
+            onClick={() => {
+              window.open(
+                "https://maps.app.goo.gl/Jh1AS1HdJqGDrPf2A",
+                "_blank"
+              );
+            }}
+          />
+          <div className="text-[14vw]">c</div>
+          <div className="text-[14vw]">a</div>
+          <div className="text-[14vw]">t</div>
+          <div className="text-[14vw]">i</div>
+          <div className="text-[14vw]">o</div>
+          <div className="text-[14vw]">n</div>
+        </div>
+        <div className="p-10 flex justify-center items-center">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1034.3800324760075!2d99.58311434590813!3d15.248560998940686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDE0JzU0LjgiTiA5OcKwMzUnMDEuNyJF!5e0!3m2!1sth!2sth!4v1759156969621!5m2!1sth!2sth"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full md:h-[30vw] h-[80vw] rounded-lg shadow"
+          />
+        </div>
+      </div>
+      <div className="flex justify-between gap-2 items-center mt-10">
+        <img
+          src={Footer}
+          className="w-full h-[70vh] mt-4 object-cover opacity-20"
+        />
+        <div className="absolute bottom-0 md:left-1.5 flex justify-center items-center max-md:flex-col-reverse max-md:w-full text-[#827c66] text-center">
+          <img
+            src={Thx}
+            className="md:w-[40vw] w-full md:h-[60vh] h-[20vh] object-cover rounded-tr-full"
+          />
+          <div className="md:w-[60vw] w-full max-md:mb-50">
+            <div>© 2026 Max & Mint Wedding</div>
+            <div className="text-[#827c66] md:text-[3.5vw] text-[8vw]">
+              ขอขอบคุณด้วยหัวใจ
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
