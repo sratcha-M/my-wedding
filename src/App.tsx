@@ -2,11 +2,22 @@ import SVG from "react-inlinesvg";
 import { motion } from "motion/react";
 import Countdown from "react-countdown";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectCards, FreeMode, Scrollbar } from "swiper/modules";
+import Lightbox from "yet-another-react-lightbox";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "swiper/css";
+import "swiper/css/effect-cards";
+import "swiper/css/free-mode";
 
 import "./App.css";
 import aboutUs3 from "./assets/about-us3.jpg";
+import aboutUs1 from "./assets/about-us.jpg";
+import aboutUs2 from "./assets/about-us2.jpg";
 import banner from "./assets/banner-dt.jpg";
 import bannerMob from "./assets/banner-mob.png";
 import Ring from "./assets/ring.svg";
@@ -23,10 +34,52 @@ import Location from "./assets/location.png";
 import Footer from "./assets/footer.jpg";
 import Thx from "./assets/thx.jpg";
 import RSVPForm from "./component/RSVPForm";
+import pw1 from "./assets/pw_1.jpg";
+import pw2 from "./assets/pw_2.jpg";
+import pw3 from "./assets/pw_3.jpg";
+import pw5 from "./assets/pw_5.jpg";
+import pw6 from "./assets/pw_6.jpg";
+import pw7 from "./assets/pw_7.jpg";
+import pw8 from "./assets/pw_8.jpg";
+import pw9 from "./assets/pw_9.jpg";
+import pw10 from "./assets/pw_10.jpg";
+import pw11 from "./assets/pw_11.jpg";
+import pw12 from "./assets/pw_12.jpg";
+import pw13 from "./assets/pw_13.jpg";
+import pw14 from "./assets/pw_14.jpg";
+import pw15 from "./assets/pw_15.jpg";
+import pw16 from "./assets/pw_16.jpg";
+import pw17 from "./assets/pw_17.jpg";
+import pw18 from "./assets/pw_18.jpg";
+import pw19 from "./assets/pw_19.jpg";
+import pw20 from "./assets/pw_20.jpg";
+
+const images = [
+  pw1,
+  pw2,
+  pw3,
+  pw5,
+  pw6,
+  pw7,
+  pw8,
+  pw9,
+  pw10,
+  pw11,
+  pw12,
+  pw13,
+  pw14,
+  pw15,
+  pw16,
+  pw17,
+  pw18,
+  pw19,
+  pw20,
+];
 
 const App = () => {
   const videoId = "msGuqelopMA";
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState<boolean>(false);
+  const [index, setIndex] = useState<number>(-1);
 
   const buildSrc = (playing: boolean) => {
     const autoplay = playing ? 1 : 0;
@@ -89,13 +142,6 @@ const App = () => {
           </motion.section>
         </motion.section>
       </div>
-      {/* <iframe
-        width="100"
-        height="100"
-        src="https://www.youtube.com/embed/msGuqelopMA?si=foMaZQrSdZfqfk-l?autoplay=1&mute=1"
-        title="YouTube video player"
-        allow="autoplay; encrypted-media"
-      /> */}
       <iframe
         className="opacity-0 w-0 h-0"
         src={buildSrc(playing)}
@@ -111,23 +157,30 @@ const App = () => {
         viewport={{ amount: 0.07 }}
         className="w-screen h-auto flex max-md:flex-col-reverse justify-center items-center gap-6 bg-gradient-to-t bg-wedding-gradient"
       >
-        {/* <img
-          src={aboutUs1}
-          alt="About Us"
-          className="w-[30vw] h-[40vw] mt-10 rounded-3xl object-cover"
-        /> */}
-
-        {/* <img
-          src={aboutUs2}
-          alt="About Us"
-          className="w-[30vw] h-[40vw] mt-10 rounded-3xl object-cover"
-        /> */}
-
-        <img
-          src={aboutUs3}
-          alt="About Us"
-          className="md:w-[30vw] md:h-[40vw] w-[50vw] md:mt-10 rounded-3xl object-cover"
-        />
+        <div className="md:w-[30vw] md:h-[40vw] w-[50vw] md:mt-10 rounded-3xl">
+          <Swiper
+            slidesPerView={1}
+            modules={[Autoplay, EffectCards]}
+            autoplay={{ delay: 500, disableOnInteraction: false }}
+            effect={"cards"}
+            grabCursor={true}
+            loop={true}
+            centeredSlides={true}
+            className="mySwiper"
+          >
+            {[aboutUs3, aboutUs1, aboutUs2].map((val, key) => {
+              return (
+                <SwiperSlide key={key}>
+                  <img
+                    src={val}
+                    alt="About Us"
+                    className="md:w-[30vw] md:h-[40vw] w-[50vw] rounded-3xl object-cover"
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
         <div className="md:w-[50vw] w-[80vw]">
           <div className="flex justify-center items-center gap-4">
             <motion.section
@@ -168,7 +221,7 @@ const App = () => {
             และร่วมเฉลิมฉลองไปกับเรา
             หวังว่าจะได้พบรอยยิ้มและคำอวยพรจากทุกท่านในวันพิเศษนี้
           </motion.section>
-          <div className="text-center text-2xl underline mt-6 font-light">
+          <div className="text-center md:text-[24px] text-[16px] underline mt-6 font-light">
             ขออภัยหากไม่ได้เรียนเชิญด้วยตัวเอง
           </div>
         </div>
@@ -338,9 +391,52 @@ const App = () => {
           <div className="w-12 h-12 bg-[#faf2e9] rounded-full" />
         </div>
       </div>
-      <div className="mt-10">
+      <div className="my-10">
         <div className="text-[#827c66] md:text-[3.5vw] text-[8vw]">
           BEST MOMENT
+        </div>
+        <div>
+          {/* Gallery Grid */}
+          <Swiper
+            spaceBetween={30}
+            modules={[Scrollbar, FreeMode, Autoplay]}
+            loop={true}
+            scrollbar={{ draggable: true }}
+            className="mySwiperGallery"
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 5 },
+            }}
+            freeMode={{
+              enabled: true,
+              momentum: true,
+              momentumRatio: 0.5,
+            }}
+            autoplay={{ delay: 1500, disableOnInteraction: false }}
+          >
+            {images.map((val, key) => {
+              return (
+                <SwiperSlide key={key}>
+                  <img
+                    src={val}
+                    alt={`wedding-${key}`}
+                    className="w-full h-60 object-cover rounded-lg shadow-md cursor-pointer"
+                    onClick={() => setIndex(key)}
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+
+          {/* Lightbox */}
+          <Lightbox
+            open={index >= 0}
+            index={index}
+            close={() => setIndex(-1)}
+            slides={images.map((src) => ({ src }))}
+            plugins={[Thumbnails, Zoom]}
+          />
         </div>
       </div>
       <div className="flex justify-center items-center max-md:flex-col p-10 gap-6">

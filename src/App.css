@@ -38,3 +38,56 @@
 .read-the-docs {
   color: #888;
 }
+
+.mySwiper {
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.swiper-wrapper {
+  scroll-behavior: smooth;
+}
+
+.yarl__container {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.yarl__thumbnails_container {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.yarl__thumbnails_vignette {
+  background: rgba(0, 0, 0, 0) !important;
+}
+
+.yarl__thumbnails_thumbnail {
+  border: 0 !important;
+  border-radius: 8px !important;
+  background: rgba(0, 0, 0, 0) !important;
+  .yarl__slide_image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}
