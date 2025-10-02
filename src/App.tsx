@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import Countdown from "react-countdown";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCards, FreeMode, Scrollbar } from "swiper/modules";
+import { Autoplay, FreeMode, Scrollbar } from "swiper/modules";
 import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
@@ -11,7 +11,6 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "swiper/css";
-import "swiper/css/effect-cards";
 import "swiper/css/free-mode";
 
 import "./App.css";
@@ -108,13 +107,13 @@ const App = () => {
           <img
             src={banner}
             alt="Image tb"
-            className="hidden md:block w-[110%] max-h-[40vw] object-cover"
+            className="hidden md:block w-[110%] max-h-[40vw] object-cover shadow-2xl object-[0px_-138px]"
           />
           <img
             src={bannerMob}
             alt="Image mob"
             loading="lazy"
-            className="md:hidden block w-full max-h-[60vh] h-[60vh] object-cover object-right"
+            className="md:hidden block w-full max-h-[60vh] h-[60vh] object-cover object-right shadow-2xl"
           />
           <motion.section
             initial={{ opacity: 0, y: 80 }}
@@ -159,13 +158,12 @@ const App = () => {
       >
         <div className="md:w-[30vw] md:h-[40vw] w-[50vw] md:mt-10 rounded-3xl">
           <Swiper
+            spaceBetween={50}
             slidesPerView={1}
-            modules={[Autoplay, EffectCards]}
-            autoplay={{ delay: 500, disableOnInteraction: false }}
-            effect={"cards"}
+            modules={[Autoplay]}
+            autoplay={{ delay: 1500, disableOnInteraction: false }}
             grabCursor={true}
             loop={true}
-            centeredSlides={true}
             className="mySwiper"
           >
             {[aboutUs3, aboutUs1, aboutUs2].map((val, key) => {
