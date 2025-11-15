@@ -18,7 +18,6 @@ import aboutUs3 from "./assets/about-us3.jpg";
 import aboutUs1 from "./assets/about-us.jpg";
 import aboutUs2 from "./assets/about-us2.jpg";
 import banner from "./assets/banner-dt.jpg";
-import bannerMob from "./assets/banner-mob.png";
 import Ring from "./assets/ring.svg";
 import Countdowns from "./component/Countdown";
 import play from "./assets/play.svg";
@@ -87,14 +86,6 @@ const App = () => {
 
   return (
     <div className="relative">
-      <SVG
-        src={playing ? pause : play}
-        onClick={() => setPlaying((p) => !p)}
-        className="fixed md:bottom-10 bottom-4 md:right-12 right-5 md:w-[4vw] md:h-[4vw] w-[40px] h-[40px] z-50 cursor-pointer"
-      />
-      <div className="text-[rgba(99,99,99,0.5)] fixed md:bottom-4 bottom-1 md:right-4 right-1 z-50 md:text-[1vw] text-[10px]">
-        version 28.02.69
-      </div>
       <div
         className={`relative w-screen md:max-h-[40vw] max-h-[60vh] bg-cover bg-center`}
       >
@@ -107,20 +98,31 @@ const App = () => {
           <img
             src={banner}
             alt="Image tb"
-            className="hidden md:block w-[110%] max-h-[40vw] object-cover shadow-2xl object-[0px_-138px]"
+            loading="eager"
+            className="hidden md:block w-[110%] max-h-[40vw] object-cover shadow-2xl"
           />
           <img
-            src={bannerMob}
+            src={banner}
             alt="Image mob"
-            loading="lazy"
-            className="md:hidden block w-full max-h-[60vh] h-[60vh] object-cover object-right shadow-2xl"
+            loading="eager"
+            className="md:hidden block w-full max-h-[60vh] h-[60vh] object-cover shadow-2xl max-[412px]:object-[-60vw_0px]"
           />
+          <div className="absolute flex gap-6 justify-center items-center bottom-[12vw] left-[12vw]">
+            <SVG
+              src={playing ? pause : play}
+              onClick={() => setPlaying((p) => !p)}
+              className="cursor-pointer md:w-[4vw] md:h-[4vw] w-[40px] h-[40px]"
+            />
+            <div className="text-[rgba(99,99,99,0.5)] md:text-[1vw] text-[10px]">
+              version 28.02.69
+            </div>
+          </div>
           <motion.section
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ amount: 0.07 }}
-            className="absolute md:top-[1vw] md:left-[29vw] md:w-[30vw] top-[6vw] left-[12vw] w-[80vw] h-[350px]"
+            viewport={{ amount: 0.07, once: true }}
+            className="absolute md:top-[6vw] md:left-[8vw] md:w-[30vw] top-[6vw] left-[12vw] w-[80vw] h-[350px]"
           >
             <SVG
               src={Ring}
@@ -153,7 +155,7 @@ const App = () => {
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        viewport={{ amount: 0.07 }}
+        viewport={{ amount: 0.07, once: true }}
         className="w-screen h-auto flex max-md:flex-col-reverse justify-center items-center gap-6 bg-gradient-to-t bg-wedding-gradient"
       >
         <div className="md:w-[30vw] md:h-[40vw] w-[50vw] md:mt-10 rounded-3xl">
@@ -173,6 +175,7 @@ const App = () => {
                     src={val}
                     alt="About Us"
                     className="md:w-[30vw] md:h-[40vw] w-[50vw] rounded-3xl object-cover"
+                    loading="lazy"
                   />
                 </SwiperSlide>
               );
@@ -185,7 +188,7 @@ const App = () => {
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ amount: 0.07 }}
+              viewport={{ amount: 0.07, once: true }}
               className=""
             >
               <span className="font-light md:text-[4vw] text-[8vw] leading-20">
@@ -200,7 +203,7 @@ const App = () => {
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ amount: 0.07 }}
+              viewport={{ amount: 0.07, once: true }}
               className=""
             >
               <span className="font-light md:text-[4vw] text-[8vw] leading-20">
@@ -212,7 +215,7 @@ const App = () => {
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ amount: 0.07 }}
+            viewport={{ amount: 0.07, once: true }}
             className="md:text-[24px] text-[16px] font-light mt-6"
           >
             เราอยากให้ทุกท่านมาร่วมเป็นส่วนหนึ่งของการรันโปรแกรมชีวิตคู่
@@ -228,7 +231,7 @@ const App = () => {
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        viewport={{ amount: 0.07 }}
+        viewport={{ amount: 0.07, once: true }}
         className="pt-6 m-[0_auto] flex flex-col items-center text-center"
       >
         <div className="relative w-full flex justify-center items-center">
@@ -236,7 +239,7 @@ const App = () => {
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ amount: 0.07 }}
+            viewport={{ amount: 0.07, once: true }}
             className="relative md:w-[27vw] md:h-[15vw] w-[235px] h-[120px]"
           >
             <SVG
@@ -269,7 +272,7 @@ const App = () => {
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ amount: 0.07 }}
+            viewport={{ amount: 0.07, once: true }}
             className="md:text-[3.5vw] text-[8vw] "
           >
             วันเสาร์
@@ -278,7 +281,7 @@ const App = () => {
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ amount: 0.07 }}
+            viewport={{ amount: 0.07, once: true }}
             className="md:text-[3.5vw] text-[8vw] "
           >
             28
@@ -287,7 +290,7 @@ const App = () => {
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ amount: 0.07 }}
+            viewport={{ amount: 0.07, once: true }}
             className="md:text-[3.5vw] text-[8vw] "
           >
             กุมภาพันธ์
@@ -296,7 +299,7 @@ const App = () => {
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ amount: 0.07 }}
+            viewport={{ amount: 0.07, once: true }}
             className="md:text-[3.5vw] text-[8vw] "
           >
             2569
@@ -320,58 +323,58 @@ const App = () => {
         </div>
         <div className="flex justify-center items-center gap-10 max-md:flex-col p-10 mt-4">
           <div className="flex justify-between items-start gap-4">
-            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
+            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
               <img
                 src={TimeLine1}
                 alt="Time line 1"
-                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
+                className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
               />
               <div className="md:text-[26px] text-[20px]">07.09 น.</div>
               <div className="md:text-[26px] text-[16px] font-light">
                 พิธีสงฆ์
               </div>
             </div>
-            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
+            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
               <img
                 src={TimeLine2}
                 alt="Time line 2"
-                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
+                className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
               />
-              <div className="md:text-[26px] text-[20px]">08.09 น.</div>
+              <div className="md:text-[26px] text-[20px]">08.29 น.</div>
               <div className="md:text-[26px] text-[16px] font-light">
                 พิธีแห่ขันหมาก
               </div>
             </div>
           </div>
+          <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
+            <img
+              src={Ring}
+              alt="Time line 4"
+              className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
+            />
+            <div className="md:text-[26px] text-[20px]">09.29 น.</div>
+            <div className="md:text-[26px] text-[16px] font-light">
+              พิธีสวมแหวน
+            </div>
+          </div>
           <div className="flex justify-between items-start gap-4">
-            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
+            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
               <img
                 src={TimeLine3}
                 alt="Time line 3"
-                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
+                className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
               />
-              <div className="md:text-[26px] text-[20px]">09.09 น.</div>
+              <div className="md:text-[26px] text-[20px]">11.09 น.</div>
               <div className="md:text-[26px] text-[16px] font-light">
                 พิธีรดน้ำสังข์
               </div>
             </div>
-            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
-              <img
-                src={Ring}
-                alt="Time line 4"
-                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
-              />
-              <div className="md:text-[26px] text-[20px]">10.09 น.</div>
-              <div className="md:text-[26px] text-[16px] font-light">
-                พิธีสวมแหวน
-              </div>
-            </div>
-            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col justify-center items-center">
+            <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
               <SVG
                 src={TimeLine5}
-                className="md:w-[140px] md:h-[140px] w-[25vw] h-[25vw]"
+                className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
               />
-              <div className="md:text-[26px] text-[20px]">11.30 น.</div>
+              <div className="md:text-[26px] text-[20px]">11.29 น.</div>
               <div className="md:text-[26px] text-[16px] font-light">
                 ฉลองมงคลสมรส (โต๊ะจีน)
               </div>
@@ -379,7 +382,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="md:my-8 border-2 border-[#e8f0df] w-max p-10 rounded-3xl mx-auto">
+      <div className="md:mb-8 border-2 border-[#e8f0df] w-max p-10 rounded-3xl mx-auto">
         <div className="md:text-[40px] text-[25px] pb-2">Dress Code</div>
         <div className="flex justify-center items-center gap-4">
           <SVG src={Bow} className="fill-[#bad29e] w-[60px] h-[60px]" />
