@@ -13,13 +13,15 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "swiper/css";
 import "swiper/css/free-mode";
 
+import RSVPForm from "./component/RSVPForm";
+import Countdowns from "./component/Countdown";
+
 import "./App.css";
 import aboutUs3 from "./assets/about-us3.jpg";
 import aboutUs1 from "./assets/about-us.jpg";
 import aboutUs2 from "./assets/about-us2.jpg";
 import banner from "./assets/banner-dt.jpg";
 import Ring from "./assets/ring.svg";
-import Countdowns from "./component/Countdown";
 import play from "./assets/play.svg";
 import pause from "./assets/pause.svg";
 import TimeLine1 from "./assets/timeline-1.png";
@@ -31,7 +33,6 @@ import Form from "./assets/form.jpg";
 import Location from "./assets/location.png";
 import Footer from "./assets/footer.jpg";
 import Thx from "./assets/thx.jpg";
-import RSVPForm from "./component/RSVPForm";
 import pw1 from "./assets/pw_1.jpg";
 import pw2 from "./assets/pw_2.jpg";
 import pw3 from "./assets/pw_3.jpg";
@@ -99,12 +100,14 @@ const App = () => {
             src={banner}
             alt="Image tb"
             loading="eager"
+            decoding="async"
             className="hidden md:block w-[110%] max-h-[40vw] object-cover shadow-2xl"
           />
           <img
             src={banner}
             alt="Image mob"
             loading="eager"
+            decoding="async"
             className="md:hidden block w-full max-h-[60vh] h-[60vh] object-cover shadow-2xl max-[412px]:object-[-60vw_0px]"
           />
           <div className="absolute flex gap-6 justify-center items-center bottom-[12vw] left-[12vw]">
@@ -326,6 +329,7 @@ const App = () => {
             <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
               <img
                 src={TimeLine1}
+                loading="lazy"
                 alt="Time line 1"
                 className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
               />
@@ -337,6 +341,7 @@ const App = () => {
             <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
               <img
                 src={TimeLine2}
+                loading="lazy"
                 alt="Time line 2"
                 className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
               />
@@ -349,6 +354,7 @@ const App = () => {
           <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
             <img
               src={Ring}
+              loading="lazy"
               alt="Time line 4"
               className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
             />
@@ -361,6 +367,7 @@ const App = () => {
             <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
               <img
                 src={TimeLine3}
+                loading="lazy"
                 alt="Time line 3"
                 className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
               />
@@ -421,8 +428,9 @@ const App = () => {
                 <SwiperSlide key={key}>
                   <img
                     src={val}
+                    loading="lazy"
                     alt={`wedding-${key}`}
-                    className="w-full h-60 object-cover rounded-lg shadow-md cursor-pointer"
+                    className="w-full h-[390px] object-cover rounded-lg shadow-md cursor-pointer"
                     onClick={() => setIndex(key)}
                   />
                 </SwiperSlide>
@@ -444,6 +452,7 @@ const App = () => {
         <RSVPForm />
         <img
           src={Form}
+          loading="lazy"
           className="md:w-[40%] md:max-w-[40%] w-full max-w-full md:h-[90vh] h-auto rounded-lg shadow-md object-cover"
         />
       </div>
@@ -451,6 +460,7 @@ const App = () => {
         <div className="flex text-[#827c66] w-full justify-center items-center gap-2">
           <div className="text-[14vw]">L</div>
           <img
+            loading="lazy"
             src={Location}
             alt="Location"
             className="w-[14vw] h-[14vw] mb-[3vw] object-cover cursor-pointer"
@@ -485,10 +495,12 @@ const App = () => {
         <img
           src={Footer}
           className="w-full h-[70vh] mt-4 object-cover opacity-20"
+          loading="lazy"
         />
         <div className="absolute bottom-0 md:left-1.5 flex justify-center items-center max-md:flex-col-reverse max-md:w-full text-[#827c66] text-center">
           <img
             src={Thx}
+            loading="lazy"
             className="md:w-[40vw] w-full md:h-[60vh] h-[20vh] object-cover rounded-tr-full"
           />
           <div className="md:w-[60vw] w-full max-md:mb-50">
