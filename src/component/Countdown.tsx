@@ -29,7 +29,7 @@ const Countdowns = ({
         </div>
       </div>
       <div className="m-[0_10px_0_10px] text-[#827c66]">:</div>
-      <div className="flex flex-col text-red-500">
+      <div className="flex flex-col text-[#f5c5b5]">
         <div>{seconds}</div>
         <div className="md:mt-4 md:text-[2vw] text-[3vw] text-black font-light">
           Seconds

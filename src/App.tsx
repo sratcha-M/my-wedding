@@ -52,6 +52,7 @@ import pw17 from "./assets/pw_17.webp";
 import pw18 from "./assets/pw_18.webp";
 import pw19 from "./assets/pw_19.webp";
 import pw20 from "./assets/pw_20.webp";
+import AnimatedFlowers from "./component/Flower";
 
 const images = [
   pw1,
@@ -87,6 +88,7 @@ const App = () => {
 
   return (
     <div className="relative">
+      <AnimatedFlowers />
       <div
         className={`relative w-screen md:max-h-[40vw] max-h-[60vh] bg-cover bg-center`}
       >
@@ -308,7 +310,7 @@ const App = () => {
             2569
           </motion.section>
         </div>
-        <div className="bg-[#faf2e9] w-full pb-6 md:pt-6">
+        <div className="bg-[#f4f7f1] w-full pb-6 md:pt-6">
           <Countdown date={"2026-02-28T00:00:00"} renderer={Countdowns} />
           <div className="md:text-2xl text-xs mt-4 font-light">
             Every love story is beautiful, but ours is my favorite 💕
@@ -392,11 +394,14 @@ const App = () => {
       <div className="md:mb-8 border-2 border-[#e8f0df] w-max p-10 rounded-3xl mx-auto">
         <div className="md:text-[40px] text-[25px] pb-2">Dress Code</div>
         <div className="flex justify-center items-center gap-4">
-          <SVG src={Bow} className="fill-[#bad29e] w-[60px] h-[60px]" />
+          <SVG
+            src={Bow}
+            className="fill-[#bad29e] w-[60px] h-[60px] stroke-[#bad29e]"
+          />
           <div className="w-12 h-12 bg-[#827c66] rounded-full" />
           <div className="w-12 h-12 bg-[#bad29e] rounded-full" />
           <div className="w-12 h-12 bg-[#e8f0df] rounded-full" />
-          <div className="w-12 h-12 bg-[#faf2e9] rounded-full" />
+          <div className="w-12 h-12 bg-[#f5c5b5] rounded-full" />
         </div>
       </div>
       <div className="my-10">
