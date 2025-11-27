@@ -354,11 +354,9 @@ const App = () => {
             </div>
           </div>
           <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
-            <img
+            <SVG
               src={Ring}
-              loading="lazy"
-              alt="Time line 4"
-              className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
+              className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw] fill-[#f5c5b5]"
             />
             <div className="md:text-[26px] text-[20px]">09.29 น.</div>
             <div className="md:text-[26px] text-[16px] font-light">
@@ -381,7 +379,7 @@ const App = () => {
             <div className="md:w-[17vw] w-[25vw] gap-4 flex flex-col h-[250px] justify-start items-center">
               <SVG
                 src={TimeLine5}
-                className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw]"
+                className="md:w-[90px] md:h-[90px] w-[20vw] h-[20vw] stroke-[#f5c5b5]"
               />
               <div className="md:text-[26px] text-[20px]">11.29 น.</div>
               <div className="md:text-[26px] text-[16px] font-light">
@@ -509,6 +507,25 @@ const App = () => {
             className="md:w-[40vw] w-full md:h-[60vh] h-[20vh] object-cover rounded-tr-full"
           />
           <div className="md:w-[60vw] w-full max-md:mb-50">
+            <div className="mb-8">
+              ช่องทางหรือเบอร์ติดต่อ <br />
+              FB:{" "}
+              <a
+                href="https://www.facebook.com/mint.sratcha"
+                className="!text-[#bad29e]"
+              >
+                mint startcha
+              </a>
+              ,{" "}
+              <a
+                href="https://www.facebook.com/maxz.adisorn"
+                className="!text-[#bad29e]"
+              >
+                max adisorn
+              </a>
+              <br />
+              0821415165 (เจ้าสาว), 0896298168 (เจ้าบ่าว)
+            </div>
             <div>© 2026 Max & Mint Wedding</div>
             <div className="text-[#827c66] md:text-[3.5vw] text-[8vw]">
               ขอขอบคุณด้วยหัวใจ
