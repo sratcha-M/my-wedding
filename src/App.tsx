@@ -269,8 +269,9 @@ const App = () => {
           Save <span className="pb-6">The</span> Date
         </div>
         <div className="my-4 md:text-[24px] text-[16px] font-light">
-          หลังจากผ่านการ Debug & Compile ความรักมาอย่างยาวนาน ถึงเวลา Deploy
-          โปรเจกต์ชีวิตคู่ ใน
+          หลังจากผ่านการ Debug & Compile ความรักมา{" "}
+          <b className="text-[#f3a6ea]">8</b> ปี ถึงเวลา Deploy โปรเจกต์ชีวิตคู่
+          ใน
         </div>
         <div className="w-full py-6 text-[#827c66]">
           <motion.section
